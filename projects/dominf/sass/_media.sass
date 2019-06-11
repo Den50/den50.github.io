@@ -1,0 +1,119 @@
+@import "bourbon"
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	section
+		.cnt_main_info
+			.items
+				.item
+					width: 80%
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	section
+		.cnt_main_info
+			.items
+				.item
+					width: 100%
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	header.main_header
+		nav
+			background-color: transparent
+			box-shadow: none
+			height: 100vh
+			ul.main_nav_ul
+				display: none
+				li
+					margin-right: 0
+			.burger_menu
+				display: block
+
+
+		.main_slide
+			margin-top: 0
+			height: 100vh
+			.caption
+				padding: 20px
+				h1
+					font-size: 2em
+				p
+					width: 100%
+		.menu_mobile
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+	section
+		.cnt_main_info
+			padding: 5px
+			.items
+				.item
+					width: 100%
+					font-size: 1.1em
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	header.main_header
+		nav
+			background-color: transparent
+			box-shadow: none
+			height: 100vh
+			ul.main_nav_ul
+				display: none
+				li
+					margin-right: 0
+			.burger_menu
+				display: block
+
+
+		.main_slide
+			margin-top: 0
+			height: 100vh
+			.caption
+				padding: 20px
+				h1
+					font-size: 2em
+				p
+					width: 100%
+		.menu_mobile
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+
+
+
