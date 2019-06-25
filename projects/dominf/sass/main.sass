@@ -1,0 +1,248 @@
+@import "bourbon"
+@import "vars.sass"
+@import "../app/libs/fontawesome/css/all.min.css"
+
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+// Default elements
+.def_button
+	display: block
+	padding: 5px 50px
+	border-radius: 20px
+	color: #fff
+	cursor: pointer
+	transition: all ease-in-out .1s
+	font-family: MontserratBold
+.def_button.green
+	background-color: #40d801
+	border: 2px solid darken(#40d801, 5%)
+	&:hover
+		background-color: darken(#40d801, 5%)
+	&:active
+		background-color: lighten(#40d801, 5%)
+$brown: #b93636
+.def_button.brown
+	background-color: $brown
+	border: 2px solid darken($brown, 5%)
+	&:hover
+		background-color: darken($brown, 5%)
+	&:active
+		background-color: lighten($brown, 5%)
+
+.absolute_align
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: center
+$ac_c: #E91EB9
+span.mark
+	background-color: $ac_c
+	border-radius: 2px
+	color: #fff
+	padding: 3px 5px
+.ffmbd
+	font-family: MontserratBold
+//Custom Styles Here
+// ***********MAIN**************
+section.def_sec
+	margin: 30px 0
+	padding: 30px
+	h1
+		font-family: MontserratBold
+		text-align: center
+section.main_info
+	.cnt_main_info
+		width: 100%
+		height: 400px
+		background-color: #fff
+		box-shadow: 0 0 15px rgba(0,0,0,.25)
+		border-radius: 4px
+		padding: 20px 30px
+	h1
+		font-family: MontserratBold
+		text-align: center
+		font-size: 2.3em
+		margin-bottom: 20px
+	.items
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		width: 100%
+		height: 60%
+		.item
+			width: 50%
+			font-size: 1.4em
+			margin-bottom: 10px
+			.key_item
+				display: inline-block
+				width: 40%
+				text-align: right
+			.value_item
+				margin-left: 5px
+				background-color: $main_c
+				color: #fff
+				width: 55%
+				float: right
+				padding: 3px 5px
+				text-align: left
+		// margin-top: 20px
+// ***********entertainment**************
+.def_button.tobottom
+	position: absolute
+	bottom: 50px
+	margin: 0 auto
+
+section.etmt_main_section
+	margin-bottom: 40px
+	.cnt_nav
+		background-color: #fff
+		.nav-tabs
+			box-shadow: 0 0 10px rgba(0,0,0,.3)
+			height: 70px
+			.container
+				height: 100%
+				flex-wrap: wrap
+				padding: 10px 0
+				a
+					word-wrap: normal
+					background-color: $main_c
+					color: #fff
+					padding: 3px 10px
+					border-radius: 3px
+					text-decoration: none
+					margin-right: 10px
+					display: block
+					// margin-bottom: 10px
+					// width: 40%
+					&:hover
+						background-color: darken($main_c, 5%)
+					&:last-child
+						margin-right: 0
+					&:active
+						background-color: darken($ac_c, 5%)
+	.cnt_etmt
+		padding: 40px 10px
+		.tab-pane
+			h2
+				margin-bottom: 20px
+			.panel-group
+				.panel.panel-default
+					margin-bottom: 10px
+					border-radius: 4px
+					overflow: hidden
+					.panel-heading
+						padding: 0
+						background-color: #fff
+						a
+							display: block
+							line-height: 1.7em
+							padding: 7px 15px 
+							text-decoration: none
+							color: #333
+					.panel-collapse.collapse
+						.panel-body
+							width: 100%
+							display: -webkit-flex
+							display: -moz-flex
+							display: -ms-flex
+							display: -o-flex
+							display: flex
+							// max-height: 200px
+							span
+								position: relative
+								margin: 0 0 20px 20px
+							.wrap_item
+								padding: 0 10px
+							a
+								color: #fff
+							a
+								width: 24%
+								img
+									width: 100%
+									height: auto
+									// object-fit: contain
+									transition: all .2s
+									// float: left
+									margin-right: 10px
+							.item_name
+								font-family: MontserratBold
+								font-size: 1.2em
+								color: #333
+							.item_address
+								&::before
+									content: '\F041'
+									font-family: fontawesome
+									margin-right: 5px
+									position: absolute
+									left: -15px
+									font-size: 1.2em
+									color: #333
+									margin-bottom: 10px
+							.item_phone
+								&::before
+									content: '\f095'
+									font-family: fontawesome
+									margin-right: 5px
+									position: absolute
+									left: -17px
+									font-size: 1.2em
+									color: #333
+							.item_link_site
+								&::before
+									content: '\F08E'
+									font-family: fontawesome
+									margin-right: 5px
+									position: absolute
+									left: -20px
+									font-size: 1.2em
+									color: #333
+
+footer
+	width: 100%
+	height: 100px
+	background-color: #333
+	color: #fff
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	font-family: MontserratBold
+
+
+//ALWAYS END
+@import "media"
