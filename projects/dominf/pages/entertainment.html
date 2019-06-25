@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<meta charset="utf-8">
+	<meta charset="utf-8">
 
 	<title>Развлечения</title>
 	<meta name="description" content="">
@@ -26,6 +26,7 @@
 	<script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
 
 	<!-- Load CSS Start -->
+	<script>loadCSS( "../libs/bootstrap/css/bootstrap.min.css", false, "all" );</script>
 	<script>loadLocalStorageCSS( "webfonts", "../css/fonts.min.css?ver=1.0.0" );</script>
 	<script>loadCSS( "../css/header.min.css?ver=1.0.0", false, "all" );</script>
 	<script>loadCSS( "../css/main.min.css?ver=1.0.0", false, "all" );</script>
@@ -37,35 +38,174 @@
 		<link rel="stylesheet" href="../css/fonts.min.css">
 		<link rel="stylesheet" href="../css/main.min.css">
 	</noscript>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+	<!-- <script>document.write(window.innerWidth)</script> -->
 	<header class="main_header">
 		
-		<nav>
+		<nav class="mob_nav">
 			<ul class="main_nav_ul">
 				<li><i class="fas fa-home"></i><a href="/">Домой</a></li>
-				<li><i class="fas fa-info"></i><a href="#main_info">Основная информация</a></li>
-				<li><i class="far fa-smile"></i><a href="pages/entertainment.html">Развлечение</a></li>
-				<li><i class="fas fa-church"></i><a href="pages/sight.html">Достопримечательности</a></li>
+				<li><i class="fas fa-info"></i><a href="/#main_info">Основная информация</a></li>
+				<li class="active"><i class="far fa-smile"></i><a href="entertainment.html">Развлечение</a></li>
+				<li><i class="fas fa-church"></i><a href="sight.html">Достопримечательности</a></li>
 			</ul>
 
 
 			<div class="burger_menu">
-				<img src="img/icons/burger1.png" alt="">
+				<img src="../img/icons/burger1.png" alt="">
 			</div>
 			<div class="menu_mobile">
 				<ul>
 
 					<li><i class="fas fa-home"></i><a href="/">Домой</a></li>
-					<li><i class="fas fa-info"></i><a href="#main_info">Основная информация</a></li>
-					<li><i class="far fa-smile"></i><a href="#entertainment">Развлечение</a></li>
-					<li><i class="fas fa-church"></i><a href="#sight">Достопримечательности</a></li>
+					<li><i class="fas fa-info"></i><a href="/#main_info">Основная информация</a></li>
+					<li><i class="far fa-smile"></i><a href="entertainment.html">Развлечение</a></li>
+					<li><i class="fas fa-church"></i><a href="sight.html">Достопримечательности</a></li>
 				</ul>
 			</div>
 
 
 		</nav>
+
+
+		<div class="main_slide etmt">
+			<div class="caption">
+				<h1>Развлечения</h1>
+				<p>Здесь вы сможете найти места для Вашего отдыха</p>
+				<div class="def_button green tobottom">Отдыхать!</div>
+			</div>
+		</div>
 	</header>
+
+	<section class="etmt_main_section">
+
+		<!-- header for tabs -->
+		<nav class="cnt_nav">
+			<div class="nav nav-tabs" id="nav-tab" role="tablist">
+				<div class="container absolute_align">
+					<a class="nav-item nav-link" id="nav-rest-tab" data-toggle="tab" href="#nav-rest" role="tab" aria-controls="nav-rest" aria-selected="true">Рестораны</a>
+					<a class="nav-item nav-link" id="nav-parks-tab" data-toggle="tab" href="#nav-parks" role="tab" aria-controls="nav-parks" aria-selected="false">Парки</a>
+					<a class="nav-item nav-link" id="nav-rc-tab" data-toggle="tab" href="#nav-rc" role="tab" aria-controls="nav-rc" aria-selected="false"><nobr>Развлек. центры</nobr></a>
+					<a class="nav-item nav-link" id="nav-vp-tab" data-toggle="tab" href="#nav-vp" role="tab" aria-controls="nav-vp" aria-selected="false">Велопрокат</a>
+					<a class="nav-item nav-link" id="nav-ac-tab" data-toggle="tab" href="#nav-ac" role="tab" aria-controls="nav-ac" aria-selected="false">Экскурсии</a>
+				</div>
+			</div>
+		</nav>
+
+
+
+		<div class="container">
+			<div class="row">
+				<div class="tab-content cnt_etmt" id="nav-tabContent">
+
+					<div class="tab-pane text-center ffmbd show active welcome_tabs" id="anon" role="tabpanel" aria-labelledby="nav-anon-tab">Welcome</div>
+					<div class="tab-pane fade" id="nav-rest" role="tabpanel" aria-labelledby="nav-rest-tab">
+						<h2 class="text-center ffmbd ">Рестораны</h2>
+
+						<div class="panel-group" id="accordion">
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+										<span class="main_main_rest">Соренто</span>, <span class="mark">ул. Ленина, 17</span>
+									</a>
+								</div>
+
+								<div id="collapse1" class="panel-collapse collapse">
+									<div class="panel-body">
+										<a target="_blank" href="https://www.google.com/maps/uv?hl=ru&pb=!1s0x414ec590a7bf20b3%3A0xc3bd9dad2c997437!2m22!2m2!1i80!2i80!3m1!2i20!16m16!1b1!2m2!1m1!1e1!2m2!1m1!1e3!2m2!1m1!1e5!2m2!1m1!1e4!2m2!1m1!1e6!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOFLFPlxceDiXzSVR93kHfkF2uA65IAInBnbEQf%3Dw260-h175-n-k-no!5z0YDQtdGB0YLQvtGA0LDQvdGLINC80YPRgNC-0LwgLSDQn9C-0LjRgdC6INCyIEdvb2dsZQ!15sCAQ&imagekey=!1e10!2sAF1QipOFLFPlxceDiXzSVR93kHfkF2uA65IAInBnbEQf">
+											<img width="20%" src="http://muromru.ru/images/restorants/sorento/102.jpg" alt="">
+										</a>
+										<div class="wrap_item">
+											<p class="item_name">Соренто</p>
+											<p>
+												<span class="item_address mark">ул. Ленина, 17</span>
+											</p>
+											<p>
+												<span class="item_phone mark">8 (492) 347-76-76</span>
+											</p>
+											<p>
+												<span class="item_link_site mark">Заказать: <a target="_blank" href="https://sorento.pizza">sorento.pizza</a></span>
+											</p>
+											<p>
+
+												<span class="stars">
+													<!-- <i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i> -->
+												</span>
+												<script>
+													let rating = 4;
+													for(let i = 0; i<Math.round(rating); i++){
+														console.log(i)
+														$(".stars").append("<i class=\"fas fa-star\"></i>");
+													}
+													for(let i = 0; i < 5 - Math.round(rating); i++){
+														$(".stars").append('<i class="far fa-star"></i>');
+													}
+												</script>
+											</p>
+										</div>
+										<div class="wrap_item">
+											<p>
+												воскресенье	10:00–00:00<br>
+												понедельник	10:00–00:00<br>
+												вторник	10:00–00:00<br>
+												среда	10:00–00:00<br>
+												четверг	10:00–00:00<br>
+												пятница	10:00–01:00<br>
+												суббота	10:00–01:00
+											</p>
+										</div>
+										<div class="wrap_item">
+											<iframe width="300" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJlwcnJ5vFTkERvkknjAWanVE&destination=place_id:ChIJsyC_p5DFTkERN3SZLK2dvcM&key=AIzaSyD_9HRAoAdWO6m5XDbnBREyJBADBKmjN9M" allowfullscreen></iframe>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+										<span class="main_main_rest">Соренто</span>, <span class="mark">ул. Ленина, 17</span>
+									</a>
+								</div>
+
+								<div id="collapse2" class="panel-collapse collapse">
+									<div class="panel-body">
+										<img data-display="false" src="http://muromru.ru/images/restorants/sorento/102.jpg" alt="">
+										<p class="item_name">Соренто</p>
+										<span class="item_address mark">ул. Ленина, 17</span>
+										<span  data-display="false" class="item_phone mark">8 (492) 347-76-76</span>
+									</div>
+								</div>
+
+							</div>
+
+
+
+						</div>
+					</div>
+					<div class="tab-pane fade" id="nav-parks" role="tabpanel" aria-labelledby="nav-parks-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum alias quo vitae doloribus doloremque odio, recusandae, distinctio placeat sapiente tempore, ipsam? Ea maxime nam voluptatem quisquam, facere ab laboriosam esse, quo nihil cumque quos quod incidunt veritatis labore vero amet.</div>
+					<div class="tab-pane fade" id="nav-rc" role="tabpanel" aria-labelledby="nav-rc-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo ut at officiis sequi sapiente, a ab veniam tenetur laudantium voluptates qui numquam assumenda illum et iste. Tempora corporis, asperiores numquam maiores beatae, enim deleniti similique illum. Nulla qui, maiores.</div>
+					<div class="tab-pane fade" id="nav-vp" role="tabpanel" aria-labelledby="nav-vp-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elillo ut at officiis sequi sapiente, a ab veniam tenetur laudantium voluptates qui numquam assumenda illum et iste. Tempora corporis, asperiores numquam maiores beatae, enim deleniti similique illum. Nulla qui, maiores.</div>
+					<div class="tab-pane fade" id="nav-ac" role="tabpanel" aria-labelledby="nav-ac-tab">Lorem ipsum dolor sitadipisicing elit. Voluptatum il voluptates qui numquam assumenda illum et iste. Tempora corporis, asperiores numquam maiores beatae, enim deleniti similique illum. Nulla qui, maiores.</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		2019&copy;Daniil Shenyagin
+	</footer>
+	<script>var scr = {"scripts":[
+	{"src" : "../js/libs.js", "async" : false},
+	{"src" : "../js/common.js", "async" : false}
+	]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+</script>
 </body>
 </html>

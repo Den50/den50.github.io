@@ -24,10 +24,10 @@
 	<!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
 	<style></style>
 
-	<!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
 	<script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
 
 	<!-- Load CSS Start -->
+	<script>loadCSS( "libs/bootstrap/css/bootstrap.min.css", false, "all" );</script>
 	<script>loadLocalStorageCSS( "webfonts", "css/fonts.min.css?ver=1.0.0" );</script>
 	<script>loadCSS( "css/header.min.css?ver=1.0.0", false, "all" );</script>
 	<script>loadCSS( "css/main.min.css?ver=1.0.0", false, "all" );</script>
@@ -47,9 +47,9 @@
 	<!-- Здесь пишем код -->
 	<header class="main_header">
 		
-		<nav>
+		<nav class="mob_nav">
 			<ul class="main_nav_ul">
-				<li><i class="fas fa-home"></i><a href="/">Домой</a></li>
+				<li class="active"><i class="fas fa-home"></i><a href="/">Домой</a></li>
 				<li><i class="fas fa-info"></i><a href="#main_info">Основная информация</a></li>
 				<li><i class="far fa-smile"></i><a href="pages/entertainment.html">Развлечение</a></li>
 				<li><i class="fas fa-church"></i><a href="pages/sight.html">Достопримечательности</a></li>
@@ -64,14 +64,14 @@
 
 					<li><i class="fas fa-home"></i><a href="/">Домой</a></li>
 					<li><i class="fas fa-info"></i><a href="#main_info">Основная информация</a></li>
-					<li><i class="far fa-smile"></i><a href="#entertainment">Развлечение</a></li>
-					<li><i class="fas fa-church"></i><a href="#sight">Достопримечательности</a></li>
+					<li><i class="far fa-smile"></i><a href="pages/entertainment.html">Развлечение</a></li>
+					<li><i class="fas fa-church"></i><a href="pages/sight.html">Достопримечательности</a></li>
 				</ul>
 			</div>
 
 
 		</nav>
-		<div class="main_slide">
+		<div class="main_slide main_bg">
 			<div class="caption">
 				<h1>Вас приветсвует гид</h1>
 				<p>Здесь вы сможете ознакомиться с полной информацией о нашем Гостевом домике, а также об основных достропримечательностях нашего города Мурома.</p>
@@ -85,6 +85,9 @@
 				<div class="cnt_main_info">
 					<h1>Основная информация</h1>
 					<div class="items">
+						<div class="item">
+							<span class="key_item">Код от ворот: </span><span class="value_item">80 - нажимать вместе</span>
+						</div>
 						<div class="item">
 							<span class="key_item">Пароль от Wi-Fi: </span><span class="value_item">102356kk</span>
 						</div>
