@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frames</title>
+</head>
+<body>
+  <h1>Студенты</h1>
+  <pre>
+    (fassert Адрес
+    (classification (generic))
+    (улица (default (Москворечье)))
+    (дом)
+    (корпус (default (нет )))
+    (квартира )
+    )
+
+    (fassert Студент
+    (ako (value Адрес))
+    (classification (generic))
+    (ФИО)
+    (Университет (default (НИЯУ_МИФИ)))
+    (Кафедра (default ( Кибернетика )))
+    )
+
+    (fassert Преподаватель
+    (ako (value Адрес))
+    (classification (generic))
+    (ФИО)
+    (Предмет)
+    (Кафедра (default ( Кибернетика )))
+    )
+
+    (fassert Студент1
+    (ako (value Студент))
+    (ФИО (value ( ИвановИИ ) ))
+    (дом (value ( 7 )))
+    (квартира (value (45)))
+    )
+    (fassert Студент2
+    (ako (value Студент))
+    (ФИО (value ( ПетровПП) ))
+    (дом (value ( 7 )))
+    (квартира (value (44)))
+    )
+    (fassert Студент3
+    (ako (value Студент))
+    (ФИО (value ( СидоровСС) ))
+    (улица (value (Кавказский_бульвар )))
+    (дом (value ( 7 )))
+    (корпус (value (3)))
+    (квартира (value (54)))
+    )
+
+    (fassert Преподаватель1
+    (ako (value Преподаватель))
+    (Предмет (value (ПрограммированиеС)))
+    (ФИО (value ( ПетровДС) ))
+    (улица (value (Москворечье )))
+    (дом (value ( 8 )))
+    (корпус (value (1)))
+    (квартира (value (54)))
+    )
+
+    (fassert Преподаватель2
+    (ako (value Преподаватель))
+    (Предмет (value (ПрограммированиеС)))
+    (ФИО (value ( УшаковУУ) ))
+    (улица (value (Москворечье )))
+    (дом (value ( 7 )))
+    (корпус (value (3)))
+    (квартира (value (99)))
+    )
+  </pre>
+</body>
+</html>
