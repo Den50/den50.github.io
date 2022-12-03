@@ -9,70 +9,108 @@
 <body>
   <h1>Студенты</h1>
   <pre>
-    (fassert Адрес
-    (classification (generic))
-    (улица (default (Москворечье)))
-    (дом)
-    (корпус (default (нет )))
-    (квартира )
-    )
+(fassert Адрес
+(classification (generic))
+(улица (default (Москворечье)))
+(дом)
+(корпус (default (нет )))
+(квартира )
+)
 
-    (fassert Студент
-    (ako (value Адрес))
-    (classification (generic))
-    (ФИО)
-    (Университет (default (НИЯУ_МИФИ)))
-    (Кафедра (default ( Кибернетика )))
-    )
+(fassert Студент
+(ako (value Адрес))
+(classification (generic))
+(ФИО)
+(Университет (default (НИЯУ_МИФИ)))
+(Кафедра (default ( Кибернетика )))
+)
 
-    (fassert Преподаватель
-    (ako (value Адрес))
-    (classification (generic))
-    (ФИО)
-    (Предмет)
-    (Кафедра (default ( Кибернетика )))
-    )
+(fassert Преподаватель
+(ako (value Адрес))
+(classification (generic))
+(ФИО)
+(Предмет)
+(Кафедра (default ( Кибернетика )))
+)
 
-    (fassert Студент1
-    (ako (value Студент))
-    (ФИО (value ( ИвановИИ ) ))
-    (дом (value ( 7 )))
-    (квартира (value (45)))
-    )
-    (fassert Студент2
-    (ako (value Студент))
-    (ФИО (value ( ПетровПП) ))
-    (дом (value ( 7 )))
-    (квартира (value (44)))
-    )
-    (fassert Студент3
-    (ako (value Студент))
-    (ФИО (value ( СидоровСС) ))
-    (улица (value (Кавказский_бульвар )))
-    (дом (value ( 7 )))
-    (корпус (value (3)))
-    (квартира (value (54)))
-    )
+(fassert Студент1
+(ako (value Студент))
+(ФИО (value ( ИвановИИ ) ))
+(дом (value ( 7 )))
+(квартира (value (45)))
+)
+(fassert Студент2
+(ako (value Студент))
+(ФИО (value ( ПетровПП) ))
+(дом (value ( 7 )))
+(квартира (value (44)))
+)
+(fassert Студент3
+(ako (value Студент))
+(ФИО (value ( СидоровСС) ))
+(улица (value (Кавказский_бульвар )))
+(дом (value ( 7 )))
+(корпус (value (3)))
+(квартира (value (54)))
+)
 
-    (fassert Преподаватель1
-    (ako (value Преподаватель))
-    (Предмет (value (ПрограммированиеС)))
-    (ФИО (value ( ПетровДС) ))
-    (улица (value (Москворечье )))
-    (дом (value ( 8 )))
-    (корпус (value (1)))
-    (квартира (value (54)))
-    )
+(fassert Преподаватель1
+(ako (value Преподаватель))
+(Предмет (value (ПрограммированиеС)))
+(ФИО (value ( ПетровДС) ))
+(улица (value (Москворечье )))
+(дом (value ( 8 )))
+(корпус (value (1)))
+(квартира (value (54)))
+)
 
-    (fassert Преподаватель2
-    (ako (value Преподаватель))
-    (Предмет (value (ПрограммированиеС)))
-    (ФИО (value ( УшаковУУ) ))
-    (улица (value (Москворечье )))
-    (дом (value ( 7 )))
-    (корпус (value (3)))
-    (квартира (value (99)))
-    )
+(fassert Преподаватель2
+(ako (value Преподаватель))
+(Предмет (value (ПрограммированиеС)))
+(ФИО (value ( УшаковУУ) ))
+(улица (value (Москворечье )))
+(дом (value ( 7 )))
+(корпус (value (3)))
+(квартира (value (99)))
+)
+  </pre>
+
+  <h1>Рыбалка</h1>
+  <pre>
+(fassert место_рыбалки
+  (classification (generic))
+  (место default(море) default(озеро) default(океан) default(река))
+)
+(fget место_рыбалки)
+
+(fassert средства_ловли
+  (classification (generic))
+  (средства default(спиннинг) default(лодка) default(червяк) default(наживка))
+)
+(fget средства_ловли)
+
+(fassert рыба
+  (classification (generic))
+  (вид default(хищная) default(полухищная) default(травоядная))
+)
+(fget рыба)
+
+(fassert рыбалка_на_пресных_водоемах
+  (classification (generic))
+  (ako (value место_рыбалки))
+  (ako (value средства_ловли))
+  (ako (value рыба))
+  (рыбак default(профессионал) default(любитель) default(спортсмен))
+)
+(fget рыбалка_на_пресных_водоемах)
+
+(fassert любительская_рыбалка_на_реке_обь
+  (classification (generic))
+  (ako (value рыбалка_на_пресных_водоемах))
+  (место (value(река_обь)))
+  (рыбак (value(любитель)))
+)
+(fget любительская_рыбалка_на_реке_обь)
   </pre>
 </body>
 </html>
